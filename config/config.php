@@ -1,5 +1,4 @@
 <?php
-define('SERVER_HOST', '127.0.0.1');
-define('DATA_BASE_NAME', 'social_and_quest');
-define('USER_NAME', 'client');
-define('PASS_WORD', 'password');
+define('PDO_SERVER', 'mysql:host=127.0.0.1;dbname=qula_cava');
+define('PDO_USERNAME', 'client');
+define('PDO_PASSWORD', 'password');
