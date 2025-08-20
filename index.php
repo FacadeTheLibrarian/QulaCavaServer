@@ -23,7 +23,7 @@ if (!$doesUserExists->fetch()) {
 session_start();
 $_SESSION['username'] = $username;
 
-$challenge = 'hello';
+$challenge = hash('sha256', random_bytes(16));
 $_SESSION['challenge'] = $challenge;
 
 $response['message'] = '';
