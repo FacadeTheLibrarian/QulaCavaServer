@@ -6,6 +6,12 @@ if (!isset($_POST['username'])) {
     exit;
 }
 $username = htmlspecialchars($_POST['username']);
+if(isset($_SESSION['username'])){
+    $response['message'] = 'you have logged in';
+    echo json_encode($response, true);
+    exit;
+}
+
 $pdo = new PDO('mysql:host=localhost;dbname=qula_cava;charset=utf8', 'client', 'password');
 try {
     $doesUserExists = $pdo->query("SELECT count(*) FROM user_data WHERE user_name = '$username'");
